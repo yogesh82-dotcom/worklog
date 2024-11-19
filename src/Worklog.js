@@ -49,7 +49,7 @@ export default function Worklog(){
     }, [])
 
     const getItems = ()=>{
-        fetch(apiUrl + "/worklogs")
+        fetch(`${apiUrl}/worklogs`)
         .then((res)=> res.json())
         .then((res)=>{
             setWorklog(res)
