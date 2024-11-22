@@ -64,7 +64,7 @@ export default function Worklog(){
 
     const handleUpdate = ()=>{
         setError("")
-        if(editTitletitle.trim() !== '' && editDescriptiondescription.trim() !== '' ){
+        if(editTitle.trim() !== '' && editDescription.trim() !== '' ){
             fetch(apiUrl + "/worklogs"+editId,{
                 method: "PUT",
                 headers:{
