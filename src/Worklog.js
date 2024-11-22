@@ -64,7 +64,7 @@ export default function Worklog(){
 
     const handleUpdate = ()=>{
         setError("")
-        if(editTitle.trim() !== '' && editDescription.trim() !== '' ){
+        if(editTitle.trim() !== '' && editDescription.trim() !== '' && editWorking_hours.trim() !== '' ){
             fetch(apiUrl + "/worklogs"+editId,{
                 method: "PUT",
                 headers:{
@@ -74,7 +74,7 @@ export default function Worklog(){
             }).then((res)=>{
                 if(res.ok){
                     const updatedWorklog = worklog.map((item)=>{
-                        if(item.id== editId){
+                        if(item._id== editId){
                             item.title = editTitle;
                             item.description =editDescription;
                             item.working_hours = editWorking_hours;
@@ -99,7 +99,7 @@ export default function Worklog(){
     }
 
     const handleEditCancel = ()=>{
-
+        setEditId(-1)
     }
 
     return <>
