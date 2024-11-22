@@ -64,7 +64,7 @@ export default function Worklog(){
 
     const handleUpdate = ()=>{
         setError("")
-        if(editTitletitle.trim() !== '' && editDescriptiondescription.trim() !== '' ){
+        if(editTitle.trim() !== '' && editDescription.trim() !== '' ){
             fetch(apiUrl + "/worklogs"+editId,{
                 method: "PUT",
                 headers:{
@@ -88,7 +88,7 @@ export default function Worklog(){
                     },3000);
                     setEditId(-1)
                 }else{
-                    setError("Unable to create New Log ")
+                    setError("Unable to Update Log ")
                 }
                
             }).catch(()=>{
