@@ -15,7 +15,7 @@ export default function Worklog(){
     const [editTitle, setEditTitle] = useState("");
     const [editDescription, setEditDescription] = useState("");
     const [editWorking_hours, setEditWorking_hours] = useState('');
-    const apiUrl = "https://worklog-server-s3y8.onrender.com/"
+    const apiUrl = "https://worklog-server-s3y8.onrender.com"
 
     const handleSubmit = ()=>{
         setError("")
