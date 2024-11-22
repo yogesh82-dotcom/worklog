@@ -15,7 +15,7 @@ export default function Worklog(){
     const [editTitle, setEditTitle] = useState("");
     const [editDescription, setEditDescription] = useState("");
     const [editWorking_hours, setEditWorking_hours] = useState('');
-    const apiUrl = "http://localhost:8000"
+    const apiUrl = "https://worklog-server-s3y8.onrender.com/"
 
     const handleSubmit = ()=>{
         setError("")
@@ -55,9 +55,18 @@ export default function Worklog(){
             setWorklog(res)
         })
     }
-
+    const handleEdit = (item) =>{
+        setEditId(item._id);
+        setEditTitle(item.title);
+        setEditDescription(item.description);
+        setEditWorking_hours(item.working_hours);
+    }
 
     const handleUpdate = ()=>{
+
+    }
+
+    const handleEditCancel = ()=>{
 
     }
 
@@ -81,23 +90,24 @@ export default function Worklog(){
             <ul className="list-group">
             {
                 worklog.map((item) => <li className="list-group-item text-white bg-dark d-flex justify-content-between align-items-center my-2">
-                    <div className="d-flex flex-column">
+                    <div className="d-flex flex-column me-2 ">
                         {
                             editId == -1 || editId !== item._id ? <>
                                 <span className="fw-bold">{item.title}</span>
                                 <span>{item.description}</span>
                             </> : <>
                                 <div className="form-group d-flex gap-2">
-                                    <input placeholder="Title" onChange={(e) => setEditTitle(e.target.value)} value={title} className="form-control" type="text"></input>
-                                    <input placeholder="description" onChange={(e) => setEditDescription(e.target.value)} value={description} className="form-control" type="text"></input>
-                                    <input placeholder="Time" onChange={(e) => setEditWorking_hours(e.target.value)} value={working_hours} className="form-control" type="time"></input>
+                                    <input placeholder="Title" onChange={(e) => setEditTitle(e.target.value)} value={editTitle} className="form-control" type="text"></input>
+                                    <input placeholder="description" onChange={(e) => setEditDescription(e.target.value)} value={editDescription} className="form-control" type="text"></input>
+                                    <input placeholder="Time" onChange={(e) => setEditWorking_hours(e.target.value)} value={editWorking_hours} className="form-control" type="time"></input>
                                 </div>
                             </>
                         }
                     </div>
                     <div className="d-flex gap-2">
-                        { editId == -1 || editId !== item._id ? <button className="btn btn-warning" onClick={ ()=>setEditId(item._id)}> Edit </button> : <button className="btn btn-warning" onClick={handleUpdate}>Update</button> }
-                        <button className="btn btn-danger">Delete</button>
+                        { editId == -1 ?<button className="btn btn-warning" onClick={ ()=>handleEdit(item)}> Edit </button> : <button className="btn btn-warning" onClick={handleUpdate}>Update</button> }
+                        { editId == -1 ?<button className="btn btn-danger">Delete</button> :
+                        <button className="btn btn-danger" onClick={handleEditCancel}>Cancel</button> }
                     </div>
                 </li>)
             }
@@ -105,4 +115,4 @@ export default function Worklog(){
         </div>
     </>
 }
-
+//from handleUpdate.
