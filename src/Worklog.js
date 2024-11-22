@@ -63,7 +63,39 @@ export default function Worklog(){
     }
 
     const handleUpdate = ()=>{
-
+        setError("")
+        if(editTitletitle.trim() !== '' && editDescriptiondescription.trim() !== '' ){
+            fetch(apiUrl + "/worklogs"+editId,{
+                method: "PUT",
+                headers:{
+                    'content-Type' : 'application/json'
+                },
+                body : JSON.stringify({editTitle,editDescription,editWorking_hours})
+            }).then((res)=>{
+                if(res.ok){
+                    const updatedWorklog = worklog.map((item)=>{
+                        if(item.id== editId){
+                            item.title = editTitle;
+                            item.description =editDescription;
+                            item.working_hours = editWorking_hours;
+                        }
+                        return item;
+                    })
+                    setWorklog(updatedWorklog)
+                    setMessage("Log updated successully")
+                    setTimeout(() => {
+                        setMessage("");  
+                    },3000);
+                    setEditId(-1)
+                }else{
+                    setError("Unable to create New Log ")
+                }
+               
+            }).catch(()=>{
+                setError("Unable to create new log")
+            })
+        
+        }
     }
 
     const handleEditCancel = ()=>{
