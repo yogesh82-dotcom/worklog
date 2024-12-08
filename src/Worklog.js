@@ -29,6 +29,9 @@ export default function Worklog(){
             }).then((res)=>{
                 if(res.ok){
                     setWorklog([...worklog,{title,description,working_hours}])
+                    setTitle("")
+                    setDescription("")
+                    setWorking_hours("")
                     setMessage("Log added successully")
                     setTimeout(() => {
                         setMessage("");  
@@ -82,6 +85,9 @@ export default function Worklog(){
                         return item;
                     })
                     setWorklog(updatedWorklog)
+                    setTitle("")
+                    setDescription("")
+                    setWorking_hours("")
                     setMessage("Log updated successully")
                     setTimeout(() => {
                         setMessage("");  
@@ -100,6 +106,18 @@ export default function Worklog(){
 
     const handleEditCancel = ()=>{
         setEditId(-1)
+    }
+
+    const handleDelete = (_id)=>{
+        if(window.confirm('Are you sure want to delete')){
+            fetch(apiUrl + "/worklogs/" + _id,{
+                method : "DELETE"
+            })
+            .then(()=>{
+                worklog.filter((_id) => item._id !== _id)
+                setWorklog(updatedWorklog)
+            })
+        }
     }
 
     return <>
@@ -138,7 +156,7 @@ export default function Worklog(){
                     </div>
                     <div className="d-flex gap-2">
                         { editId == -1 ?<button className="btn btn-warning" onClick={ ()=>handleEdit(item)}> Edit </button> : <button className="btn btn-warning" onClick={handleUpdate}>Update</button> }
-                        { editId == -1 ?<button className="btn btn-danger">Delete</button> :
+                        { editId == -1 ?<button className="btn btn-danger" onClick={ ()=>handeDelete(item._id)}>Delete</button> :
                         <button className="btn btn-danger" onClick={handleEditCancel}>Cancel</button> }
                     </div>
                 </li>)
