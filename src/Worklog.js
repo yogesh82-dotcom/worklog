@@ -156,7 +156,7 @@ export default function Worklog(){
                     </div>
                     <div className="d-flex gap-2">
                         { editId == -1 ?<button className="btn btn-warning" onClick={ ()=>handleEdit(item)}> Edit </button> : <button className="btn btn-warning" onClick={handleUpdate}>Update</button> }
-                        { editId == -1 ?<button className="btn btn-danger" onClick={ ()=>handeDelete(item._id)}>Delete</button> :
+                        { editId == -1 ?<button className="btn btn-danger" onClick={ ()=>handleDelete(item._id)}>Delete</button> :
                         <button className="btn btn-danger" onClick={handleEditCancel}>Cancel</button> }
                     </div>
                 </li>)
