@@ -110,7 +110,7 @@ export default function Worklog(){
 
     const handleDelete = (id)=>{
         if(window.confirm('Are you sure want to delete')){
-            fetch(apiUrl + "/worklogs/" + _id,{
+            fetch(apiUrl + "/worklogs/" + id,{
                 method : "DELETE"
             })
             .then(()=>{
