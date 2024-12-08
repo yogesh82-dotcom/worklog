@@ -65,12 +65,12 @@ export default function Worklog(){
     const handleUpdate = ()=>{
         setError("")
         if(editTitle.trim() !== '' && editDescription.trim() !== '' && editWorking_hours.trim() !== '' ){
-            fetch(apiUrl + "/worklogs"+editId,{
+            fetch(apiUrl + "/worklogs/" + editId,{
                 method: "PUT",
                 headers:{
                     'content-Type' : 'application/json'
                 },
-                body : JSON.stringify({editTitle,editDescription,editWorking_hours})
+                body : JSON.stringify({title : editTitle,description : editDescription,working_hours : editWorking_hours})
             }).then((res)=>{
                 if(res.ok){
                     const updatedWorklog = worklog.map((item)=>{
