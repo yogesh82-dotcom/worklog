@@ -108,13 +108,13 @@ export default function Worklog(){
         setEditId(-1)
     }
 
-    const handleDelete = (_id)=>{
+    const handleDelete = (id)=>{
         if(window.confirm('Are you sure want to delete')){
             fetch(apiUrl + "/worklogs/" + _id,{
                 method : "DELETE"
             })
             .then(()=>{
-                worklog.filter((_id) => item._id !== _id)
+                const updatedWorklog = worklog.filter((item) => item._id !== id)
                 setWorklog(updatedWorklog)
             })
         }
