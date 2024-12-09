@@ -23,7 +23,7 @@ The app's frontend and backend are deployed on Render.com, ensuring a live and r
 -  MongoDB Atlas   
 -  Render.com (Frontend and Backend)  
 
-**<h1>Experience the App</h1>**  
+**<h1>Experience the App</h1>**
 🚀 [See it in Action](https://worklog-1urf.onrender.com/)
 
 # Future Enhancements
