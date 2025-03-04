@@ -2,7 +2,6 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import Alert from "@mui/material/Alert";
 import TextField from "@mui/material/TextField";
-
 import { useNavigate } from "react-router-dom";
 import "./Worklog.css";
 
