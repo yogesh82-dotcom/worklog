@@ -1,13 +1,29 @@
 import './App.css';
-import Worklog from './Worklog';
-
-function App() {
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from './components/Login/Login';
+import Worklog from './components/worklog/Worklog';
+import Signup from './components/Signup/Signup';
+import Forgotpass from './components/Login/Forgotpass';
+// function App() {
+//   return (
+//     <div className="container">
+//       <Worklog/>
+//     </div>
+//   );
+// }
+const App = () => {
   return (
-    <div className="container">
-      <Worklog/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route path="/forgot-password" element={<Forgotpass/>}/>
+        <Route path="/homepage" element={<Worklog/>} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
 
