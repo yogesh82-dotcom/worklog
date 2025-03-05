@@ -24,8 +24,8 @@ export default function Worklog() {
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
 
-  const apiUrl = "http://localhost:8000";
-  //const apiUrl = "https://worklog-server-s3y8.onrender.com"
+  //server url
+  const apiUrl = "https://worklog-server-s3y8.onrender.com";
 
   const handleSubmit = () => {
     setShowModal(false);
@@ -420,9 +420,8 @@ export default function Worklog() {
     </>
   );
 }
-//from handleUpdate.
 
-/*
+/*  Previus Client code
     return <>
         <div className="p-4 bg-success text-light ">
             <h1><center>Worklog Website using MERN stack</center></h1>
