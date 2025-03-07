@@ -16,13 +16,16 @@ const Signup = () => {
       return;
     } else {
       seterrorMessage("");
-      const response = await fetch("https://worklog-1urf.onrender.com/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password, cfrmPassword }),
-      });
+      const response = await fetch(
+        "https://worklog-server-s3y8.onrender.com/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password, cfrmPassword }),
+        }
+      );
       const data = await response.json();
       console.log(data);
       navigate("/");

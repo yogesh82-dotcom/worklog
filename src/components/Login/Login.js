@@ -19,13 +19,16 @@ const Login = () => {
     }
     setLoading(true);
     try {
-      const response = await fetch("https://worklog-1urf.onrender.com/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://worklog-server-s3y8.onrender.com/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const result = await response.json();
       if (response.ok) {
         if (result.userId) {
