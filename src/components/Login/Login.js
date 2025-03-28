@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +20,6 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        //"http://localhost:8000/login",
         "https://worklog-server-production.up.railway.app/login",
         // "https://worklog-server-s3y8.onrender.com/login",
         {
@@ -82,9 +81,9 @@ const Login = () => {
               />
             </div>
             <div className="text-end mb-3">
-              <a href="/forgot-password" className="text-primary no-underline">
+              <Link to="/forgot-password" className="text-primary no-underline">
                 Forgot Password?
-              </a>
+              </Link>
             </div>
             {errorMessage && (
               <div className="alert alert-danger" role="alert">
@@ -118,9 +117,9 @@ const Login = () => {
             <div className="text-center mt-3">
               <p>
                 Don't have an account?{" "}
-                <a href="/signup" className="text-primary">
+                <Link to="/signup" className="text-primary">
                   Sign up
-                </a>
+                </Link>
               </p>
             </div>
           </form>
