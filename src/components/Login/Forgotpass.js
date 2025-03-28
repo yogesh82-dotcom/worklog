@@ -16,7 +16,8 @@ const Forgotpass = () => {
     } else {
       seterrorMessage("");
       const response = await fetch(
-        "https://worklog-server-s3y8.onrender.com/forgot-password",
+        "https://worklog-server-production.up.railway.app/forgot-password",
+        //"https://worklog-server-s3y8.onrender.com/forgot-password",
         {
           method: "PUT",
           headers: {

@@ -17,7 +17,8 @@ const Signup = () => {
     } else {
       seterrorMessage("");
       const response = await fetch(
-        "https://worklog-server-s3y8.onrender.com/signup",
+        "https://worklog-server-production.up.railway.app/signup",
+        //"https://worklog-server-s3y8.onrender.com/signup",
         {
           method: "POST",
           headers: {
