@@ -6,7 +6,6 @@ Scribly is a full-stack MERN (MongoDB, Express, React, Node.js) web application 
 
 🌐 [Check out Scribly here](https://worklog-1urf.onrender.com)
 
----
 
 ## 🛠️ Tech Stack
 
@@ -15,7 +14,6 @@ Scribly is a full-stack MERN (MongoDB, Express, React, Node.js) web application 
 - **Database**: MongoDB Atlas (with Mongoose)
 - **Deployment**: Render (Client) & Railway (Server)
 
----
 
 ## ✨ Features
 
@@ -26,7 +24,6 @@ Scribly is a full-stack MERN (MongoDB, Express, React, Node.js) web application 
 - 📅 Date-based log tracking
 - 🎯 Responsive and mobile-friendly UI
 
----
 
 ## 🧠 Inspiration
 
