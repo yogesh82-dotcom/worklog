@@ -27,4 +27,4 @@ Scribly is a full-stack MERN (MongoDB, Express, React, Node.js) web application 
 
 ## 🧠 Inspiration
 
-This project was built out of the need for a clean and quick personal work tracker with a focus on user-specific security and Google Keep-like grid layout (Masonory Layout) aesthetics.
+This project was built out of the need for a clean and quick personal work tracker with a focus on user-specific security and Google Keep-like grid layout (Masonry Layout) aesthetics.
